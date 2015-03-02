@@ -1,0 +1,38 @@
+{
+  "name": "Trello from Gmail",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Easily create Trello cards from Gmail threads",
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png"
+  },
+  "web_accessible_resources":["images/icon-16.png"],
+  "page_action": {
+    "default_icon": "images/icon-16.png",
+    "default_title": "GMail detected"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": [
+          "bundle.js"
+      ],
+      "css": [
+        "main.css"
+      ]
+    }
+  ],
+  "options_page": "options.html",
+  "web_accessible_resources":[
+    "images/icon-13.jpg",
+    "images/new_icon.gif",
+    "lib/jquery.min.map"
+  ],
+  "homepage_url": "http://github.com/laurihy",
+  "offline_enabled": false,
+  "permissions": [
+    "tabs",
+    "http://*/*", "https://*/*"
+  ]
+}
